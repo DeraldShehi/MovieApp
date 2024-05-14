@@ -5,7 +5,8 @@ import MovieData from "./Data.json";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
 import MovieListHeading from "./components/MovieListHeading";
-import { FaHeart } from "react-icons/fa";
+import FilterList from "./components/FilterList";
+import MovieList from "./components/MovieList";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -14,43 +15,9 @@ const App = () => {
       <NavBar />
       <SearchBar placeholder="Enter a Movie Name..." data={MovieData} />
       <MovieListHeading heading="MOVIE (2015)" />
-      <div className="filter-list">
-        {MovieData.filter((el) => el.year === "2015").map((el) => {
-          return (
-            <div key={el.id} className="card">
-              <div className="img-container">
-                <img src={el.posterUrl}></img>
-                <i className="favorite-icon">
-                  <FaHeart />
-                </i>
-              </div>
-              <div className="desc-container">
-                <h4>{el.title}</h4>
-                <span>( {el.year} )</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <FilterList data={MovieData} />
       <MovieListHeading heading="SHOWCASE" />
-      <div className="card-container">
-        {MovieData.map((el) => {
-          return (
-            <div key={el.id} className="card">
-              <div className="img-container">
-                <img src={el.posterUrl}></img>
-                <i className="favorite-icon">
-                  <FaHeart />
-                </i>
-              </div>
-              <div className="desc-container">
-                <h4>{el.title}</h4>
-                <span>( {el.year} )</span>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <MovieList data={MovieData} />
       <Footer />
     </div>
   );
