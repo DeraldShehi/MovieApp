@@ -12,7 +12,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 998;
 }
 
 header span {
@@ -61,7 +61,7 @@ header span {
   width: 200px;
   right: 30px;
   top: 25px;
-  z-index: 999;
+  z-index: 998;
 }
 
 .searchInput {
@@ -156,7 +156,7 @@ a:hover {
 
 .card-container {
   display: flex;
-  width: auto;
+  width: 100%;
   flex-wrap: wrap;
   padding: 50px 30px;
   gap: 2rem;
@@ -197,8 +197,88 @@ a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
-.card:hover .favorite-icon {
+.card:hover .favourite-div {
   opacity: 1;
+}
+.favourite-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: brown;
+  width: 100%;
+  transform: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.card:hover .watch-later-div {
+  opacity: 1;
+}
+.watch-later-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: #bcbcbc;
+  width: 100%;
+  transform: 0.5s ease;
+  opacity: 0;
+  top: 0;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px 0;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.favourites-section,
+.watchLater-section {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  background-image: linear-gradient(50deg, black, rgb(73, 11, 11));
+  z-index: 999;
+  overflow-y: scroll;
+}
+
+.close-btn {
+  margin: 50px 0 0 50px;
+  width: 50px;
+  height: 30px;
+  color: #222;
+  font-size: 14px;
+  border: none;
+}
+.close-btn:hover {
+  cursor: pointer;
+  color: brown;
+}
+.favourites-section .watch-later-div {
+  display: none;
+}
+.watchLater-section .favourite-div {
+  display: none;
+}
+
+.favourites-section .movie-list-heading {
+  color: #fff;
+  margin: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.watchLater-section .movie-list-heading {
+  color: #fff;
+  margin: 60px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .img-container {
@@ -221,21 +301,6 @@ a:hover {
   cursor: pointer;
 }
 
-.favorite-icon {
-  color: brown;
-  font-size: 22px;
-  position: relative;
-  top: -260px;
-  border-radius: 100%;
-  border: 2px solid brown;
-  opacity: 0;
-  transition: 0.5s ease;
-}
-
-.favorite-icon:hover {
-  color: rgb(96, 22, 22);
-  border: 2px solid rgb(96, 22, 22);
-}
 .desc-container {
   display: flex;
   flex-direction: column;

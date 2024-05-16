@@ -9,7 +9,7 @@
     max-width: 100px;
   }
   .search {
-    width: 120px;
+    width: 110px;
   }
   .searchInput input {
     font-size: 10px;
@@ -27,6 +27,7 @@
     display: flex;
     overflow-x: scroll;
     height: 500px;
+    padding: 50px 0;
   }
   .card {
     width: 260px;

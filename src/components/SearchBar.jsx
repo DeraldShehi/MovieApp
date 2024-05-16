@@ -44,7 +44,12 @@ const SearchBar = ({ placeholder, data }) => {
         <div className="dataResult">
           {filterData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem" href={value.posterUrl} target="_blank">
+              <a
+                className="dataItem"
+                href={value.posterUrl}
+                target="_blank"
+                key={value.id}
+              >
                 <p>
                   {" "}
                   <img src={value.posterUrl} alt="img" />

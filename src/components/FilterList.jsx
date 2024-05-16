@@ -1,6 +1,14 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
-const FilterList = ({ data }) => {
+const FilterList = ({
+  data,
+  favouriteComponent,
+  watchLaterComponent,
+  handleFavouritesClick,
+  handleWatchLaterClick,
+}) => {
+  const FavouriteComponent = favouriteComponent;
+  const WatchLaterComponent = watchLaterComponent;
   return (
     <div className="filter-list">
       {data
@@ -17,6 +25,18 @@ const FilterList = ({ data }) => {
               <div className="desc-container">
                 <h4>{el.title}</h4>
                 <span>( {el.year} )</span>
+              </div>
+              <div
+                onClick={() => handleFavouritesClick(el)}
+                className="favourite-div"
+              >
+                <FavouriteComponent />
+              </div>
+              <div
+                onClick={() => handleWatchLaterClick(el)}
+                className="watch-later-div"
+              >
+                <WatchLaterComponent />
               </div>
             </div>
           );
